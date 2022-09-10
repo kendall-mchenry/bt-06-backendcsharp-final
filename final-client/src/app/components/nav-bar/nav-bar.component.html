@@ -1,0 +1,25 @@
+<nav role="navigation" class="nav-bar">
+
+    <div class="title-div">
+        <img class="logo" src="/assets/post-world.png" alt="Post World Logo">
+    
+        <h1>POST WORLD</h1>
+    </div>
+       
+    <div class="right-nav">
+        <span *ngIf="(currentUser | json) == '{}' ">
+            <button class="btn" routerLink="/signup" title="Sign Up">Sign Up</button>
+            <button class="btn" routerLink="/signin" title="Sign In">Sign In</button>
+        </span>
+    
+        <span *ngIf="(currentUser | json) != '{}' ">
+            <span><b>Welcome, <a [routerLink]="['profile/', currentUser.userId]">{{currentUser.username}}</a></b> </span>
+    
+            <button class="btn" (click)="signout()" title="Sign Out">Sign Out</button>
+        </span>
+        
+        <button class="btn" routerLink="/posts" title="Posts">Post Feed</button>
+    
+        <button class="btn" routerLink="/profile/users/all" title="Profiles">All Users</button>
+    </div>
+</nav>

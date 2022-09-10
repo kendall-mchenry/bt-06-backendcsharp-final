@@ -1,0 +1,33 @@
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: lightblue;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 100px;
+    max-height: auto;
+    display: inline;
+}
+
+h1 {
+    display: inline;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.title-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 40%;
+}
+
+.right-nav {
+    display: flex;
+    flex-direction: row;
+}

@@ -1,0 +1,15 @@
+<h1 class="title">Edit Post</h1>
+<form class="form" (ngSubmit)="onEditSubmit()">
+    <span> <b>Title: </b> </span>
+    <input type="text" name="title" [(ngModel)]="editPost.title">
+    <br><br>
+
+    <p> <b>Post Content: </b> </p>
+    <textarea class="content" type="text" name="content" cols="50" rows="5" [(ngModel)]="editPost.content"></textarea>
+    
+    <br><br>
+
+    <button class="btn">
+        Submit
+    </button>
+</form>

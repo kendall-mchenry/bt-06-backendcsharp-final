@@ -1,0 +1,26 @@
+<h1 class="title">Edit {{currentUser.username}}</h1>
+    <form class="form" (ngSubmit)="onEditSubmit()">
+        <span>Username: </span>
+        <input type="text" name="username" [(ngModel)]="currentUser.username">
+        <br><br>
+
+        <span>First Name: </span>
+        <input type="text" name="first-name" [(ngModel)]="currentUser.firstName">
+        <br><br>
+
+        <span>Last Name: </span>
+        <input type="text" name="last-name" [(ngModel)]="currentUser.lastName">
+        <br><br>
+
+        <span>State: </span>
+        <input type="text" name="state" [(ngModel)]="currentUser.state">
+        <br><br>
+
+        <!-- <span>Photo URL: </span>
+        <input type="text" name="photourl" [(ngModel)]="currentUser.photoUrl"> -->
+        
+
+        <button class="btn">
+            Submit
+        </button>
+    </form>

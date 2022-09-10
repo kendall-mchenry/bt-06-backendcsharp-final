@@ -1,0 +1,14 @@
+<div>
+    <h1 class="title">All Users</h1>
+    <div *ngIf="userList">
+        <div *ngFor="let user of userList" class="post">
+            <h3>{{user.username}}</h3>
+            <p>Member Since: {{user.createdDate}}</p>
+            <div class="view-btn">
+                <button class="btn" [routerLink]="['/profile/', user.userId]">View User</button>
+
+            </div>
+        </div>
+
+    </div>
+</div>

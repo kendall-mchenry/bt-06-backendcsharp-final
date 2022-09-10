@@ -1,0 +1,34 @@
+<div >
+    <h1 class="title">User Profile: {{viewUser.username}}</h1>
+
+    <div class="user-page-info">
+        <p class="user-element" *ngIf="viewUser.firstName || viewUser.lastName"> <b>Name: </b> {{viewUser.firstName}} {{viewUser.lastName}}</p>
+        <p class="user-element" *ngIf="viewUser.state"> <b>Location: </b>  {{viewUser.state}}</p>
+        <p class="user-element"> <b>Profile Created: </b> {{viewUser.createdDate}}</p>
+        <div *ngIf="currentUser.userId == viewUser.userId">
+            <button class="btn" [routerLink]="['/profile/edit/current']" >Edit User</button>
+        </div>
+    </div>
+    
+</div>
+<br><hr><br>
+<div *ngIf="currentUser.userId == viewUser.userId">
+    <app-create-post></app-create-post>
+    <br><hr><br>
+</div>
+
+<div>
+<h2 class="title">Posts</h2>
+<div *ngFor="let post of postList" class="post">
+    <h3>{{post.title}}</h3>
+    <p>{{post.content}}</p>
+    <br>
+    <p class="user-info"><b>{{viewUser.username}}</b>, {{post.postedDate}}</p>
+    <br>
+    <div class="btns" *ngIf="currentUser.userId == viewUser.userId">
+        <button class="btn" [routerLink]="['/posts/edit', post.postId]">Edit Post</button>
+        <button class="btn" (click)="onItemDelete(post.postId)" >Delete Post</button>
+    </div>
+
+</div>
+</div>

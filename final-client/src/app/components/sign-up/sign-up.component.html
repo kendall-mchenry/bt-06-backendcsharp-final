@@ -1,0 +1,21 @@
+<form class="form" (ngSubmit)="signup()">
+    <h1>REGISTER NEW USER</h1>
+
+    <span>Username*:  </span>
+    <input placeholder="Enter Username" type="text" name="username" [(ngModel)]="newUser.username"><br><br>
+    <span>Password*:  </span>
+    <input placeholder="Enter Password" type="text" name="password" [(ngModel)]="newUser.password"><br><br>
+
+    <span>First Name:  </span>
+    <input placeholder="Enter First Name" type="text" name="firstName" [(ngModel)]="newUser.firstName"><br><br>
+    <span>Last Name:  </span>
+    <input placeholder="Enter Last Name" type="text" name="lastName" [(ngModel)]="newUser.lastName"><br><br>
+    <span>State:  </span>
+    <input placeholder="Enter State" type="text" name="state" [(ngModel)]="newUser.state"><br><br>
+    <!-- <span>Photo URL  </span> -->
+    <!-- <input placeholder="Enter Photo URL" type="text" name="photoUrl" [(ngModel)]="newUser.photoUrl"><br><br> -->
+    
+    <button class="btn">
+      Sign Up
+    </button>
+</form>

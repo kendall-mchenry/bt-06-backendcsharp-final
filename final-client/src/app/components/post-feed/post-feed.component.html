@@ -1,0 +1,19 @@
+<h1 class="title">Post Feed</h1>
+<div *ngIf="(currentUser | json) != '{}' ">
+    <app-create-post></app-create-post>
+    <br><hr><br>
+
+</div>
+<div *ngIf="postList" class="post-list">
+    <div *ngFor="let post of postList" class="post">
+        <h3>{{post.title}}</h3>
+        <p>{{post.content}}</p>
+        
+        <!-- <p *ngIf="currentUser.userId == post.userId">Posted by <a [routerLink]="['/profile/', currentUser.userId]">{{currentUser.username}}</a> on {{post.postedDate}}</p> -->
+<br>
+        <p *ngFor="let user of userList" class="user-info">
+            <span *ngIf="user.userId == post.userId">Posted by <a [routerLink]="['/profile/', user.userId]">{{user.username}}</a> on {{post.postedDate}}</span>
+        </p>
+        
+    </div>
+</div>
